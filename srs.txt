@@ -1,0 +1,49 @@
+Seat Reservation System
+
+booking_details(booking_id,name,seat_row,seat_column,event_date)
+
+com.company.srs.model
+Reservation
+
+com.company.srs.dao
+ReservationDAO
+	selectSeatBy(seatRow,seatColumn,eventDate)
+	save(Reservation)
+ReservationDAOImpl
+
+com.company.srs.service
+ReservationService
+	add(Reservation){
+		if(!ReservationDAO.selectSeatBy())	
+				ReservationDAO.save()
+	}
+ReservationServiceImpl
+
+com.company.srs.factory
+ServiceFactory
+DAOFactory
+
+com.company.srs.controller
+ReservationController
+
+com.company.srs.util
+DBUtil
+
+com.company.srs.exception
+DBException
+InsertFailedException
+SeatAlreadyReservedException
+NoRecordFoundException
+DataAccessException
+
+
+UI
+home.jsp
+bookSeat.jsp
+success.jsp
+error.jsp
+under_construction.jsp
+header.jsp
+footer.jsp
+
+

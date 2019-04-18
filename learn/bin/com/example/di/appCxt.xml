@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id="accountService" class="com.example.di.AccountService">
+		<constructor-arg>
+			<value>Core Banking Service</value>
+		</constructor-arg>
+		<property name="location">
+			<value>Patel Nagar</value>
+		</property>
+		<!--  constructor-arg>
+			<value>Janpath Road</value>
+		</constructor-arg -->
+	</bean>
+	
+	<bean  id="emailService" class="com.example.di.EmailService">
+		<property name="emailDAO">
+			<ref bean="emailDAO" />
+		</property>
+	</bean>
+
+	<bean id="emailDAO" class="com.example.di.EmailDAO">
+	</bean>
+
+	<bean  id="calculatorService" class="com.example.di.CalculatorService">
+	</bean>
+	
+
+</beans>
